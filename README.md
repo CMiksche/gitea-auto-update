@@ -31,3 +31,8 @@ Uses python version 3
 4. Enter the command `python updater.py` in your commandline.
 
 5. If you want to schedule your updates, edit your /etc/crontab file.
+
+## Tutorials
+
+* English: http://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html
+* German: https://blog.wronnay.net/automatische-gitea-updates/
