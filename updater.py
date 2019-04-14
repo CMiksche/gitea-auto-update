@@ -19,6 +19,21 @@ def download(url, file_name):
         # write to file
         file.write(response.content)
 
+# Function to build the new version from source
+def buildFromSource(tag):
+    # Change to source dir
+    os.chdir(settings.source_dir)
+    # Checkout master
+    os.system("git checkout master")
+    # Update
+    os.system("git pull")
+    # Checkout relase branch
+    os.system("git checkout "+tag)
+    # Build from source
+    os.system('TAGS="bindata sqlite sqlite_unlock_notify" make generate build')
+    # Move binary
+    os.system("mv gitea "+settings.gtfile)
+
 # Version from gitea site
 current_version = requests.get(settings.gtsite).json()['version']
 
@@ -34,11 +49,18 @@ if github_version > current_version:
     # Stop systemd service
     os.system("systemctl stop gitea.service")
 
-    # Set download url
-    gtdownload = 'https://github.com/go-gitea/gitea/releases/download/'+github_version_tag+'/gitea-'+github_version+'-'+settings.gtsystem
+    # Should the new version be build from source?
+    if settings.build_from_source:
 
-    # Download file
-    download(gtdownload, settings.gtfile)
+        buildFromSource(github_version_tag)
+
+    else:
+
+        # Set download url
+        gtdownload = 'https://github.com/go-gitea/gitea/releases/download/'+github_version_tag+'/gitea-'+github_version+'-'+settings.gtsystem
+
+        # Download file
+        download(gtdownload, settings.gtfile)
 
     # Start systemd service
     os.system("systemctl start gitea.service")
