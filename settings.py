@@ -14,3 +14,7 @@ gtgithubapiurl = 'https://api.github.com/repos/go-gitea/gitea/releases/latest'
 gtsystem = 'linux-amd64'
 # Name and Path of gitea file
 gtfile = '/home/git/gitea'
+# Build new version from source?
+build_from_source = None
+# Source directroy
+source_dir = '/home/git/go/src/code.gitea.io/gitea'
