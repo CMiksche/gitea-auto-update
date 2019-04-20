@@ -9,30 +9,7 @@ License: GNU General Public License
 import settings
 import requests
 import os
-
-# Function to download a file
-def download(url, file_name):
-    # open in binary mode
-    with open(file_name, "wb") as file:
-        # get request
-        response = requests.get(url)
-        # write to file
-        file.write(response.content)
-
-# Function to build the new version from source
-def buildFromSource(tag):
-    # Change to source dir
-    os.chdir(settings.source_dir)
-    # Checkout master
-    os.system("git checkout master")
-    # Update
-    os.system("git pull")
-    # Checkout relase branch
-    os.system("git checkout "+tag)
-    # Build from source
-    os.system('TAGS="bindata sqlite sqlite_unlock_notify" make generate build')
-    # Move binary
-    os.system("mv gitea "+settings.gtfile)
+import functions
 
 # Version from gitea site
 current_version = requests.get(settings.gtsite).json()['version']
@@ -44,7 +21,7 @@ github_version_tag = requests.get(settings.gtgithubapiurl).json()['tag_name']
 github_version = github_version_tag[1:]
 
 # Check if there is a new version
-if github_version > current_version:
+if functions.checkVersion(github_version, current_version):
 
     # Stop systemd service
     os.system("systemctl stop gitea.service")
@@ -52,7 +29,7 @@ if github_version > current_version:
     # Should the new version be build from source?
     if settings.build_from_source:
 
-        buildFromSource(github_version_tag)
+        functions.buildFromSource(github_version_tag)
 
     else:
 
@@ -60,7 +37,7 @@ if github_version > current_version:
         gtdownload = 'https://github.com/go-gitea/gitea/releases/download/'+github_version_tag+'/gitea-'+github_version+'-'+settings.gtsystem
 
         # Download file
-        download(gtdownload, settings.gtfile)
+        functions.download(gtdownload, settings.gtfile)
 
     # Start systemd service
     os.system("systemctl start gitea.service")
