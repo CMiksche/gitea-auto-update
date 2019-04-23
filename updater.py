@@ -10,6 +10,7 @@ import settings
 import requests
 import os
 
+
 # Function to download a file
 def download(url, file_name):
     # open in binary mode
@@ -34,6 +35,18 @@ def buildFromSource(tag):
     os.system('TAGS="bindata sqlite sqlite_unlock_notify" make generate build')
     # Move binary
     os.system("mv gitea "+settings.gtfile)
+
+def is_tool(name):
+    ##Check whether `name` is on PATH and marked as executable. 
+
+    # from whichcraft import which
+    from shutil import which
+
+    return which(name) is not None
+
+if not is_tool("xz"):
+	print ("missing dependency: xz")
+	quit()
 
 # Version from gitea site
 current_version = requests.get(settings.gtsite).json()['version']
