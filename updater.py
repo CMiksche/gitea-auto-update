@@ -9,7 +9,6 @@ License: GNU General Public License
 import settings
 import requests
 import os
-<<<<<<< HEAD
 
 
 # Function to download a file
@@ -36,9 +35,6 @@ def buildFromSource(tag):
     os.system('TAGS="bindata sqlite sqlite_unlock_notify" make generate build')
     # Move binary
     os.system("mv gitea "+settings.gtfile)
-=======
-import functions
->>>>>>> 38e9451f8a230c9110e7b43f34cd64f375858f71
 
 def is_tool(name):
     ##Check whether `name` is on PATH and marked as executable. 
@@ -83,7 +79,6 @@ if functions.checkVersion(github_version, current_version):
         print (shadownload)
 
         # Download file
-<<<<<<< HEAD
 
         ## downloading sha
         print ("downloading sha256 hashsum")
@@ -110,9 +105,6 @@ if functions.checkVersion(github_version, current_version):
         else:
         	print ("error")
         	quit()
-=======
-        functions.download(gtdownload, settings.gtfile)
->>>>>>> 38e9451f8a230c9110e7b43f34cd64f375858f71
 
     # Start systemd service
     print ("starting gitea.service")
