@@ -11,17 +11,20 @@ import unittest
 
 class Tests(unittest.TestCase):
 
-    def checkSimpleVersion(self):
+    def testSimpleVersion(self):
         self.assertTrue(functions.checkVersion('1.9.1', '1.9.0'))
 
-    def checkTwoIntVersion(self):
+    def testTwoIntVersion(self):
         self.assertTrue(functions.checkVersion('1.10.0', '1.9.0'))
 
-    def checkFalseVersion(self):
+    def testFalseVersion(self):
         self.assertFalse(functions.checkVersion('1.8.0', '1.9.0'))
 
-    def checkSameVersion(self):
+    def testSameVersion(self):
         self.assertFalse(functions.checkVersion('1.9.7', '1.9.7'))
+
+    def testInt(self):
+        self.assertTrue(functions.checkVersion('9', '8'))
 
 if __name__ == '__main__':
     unittest.main()
