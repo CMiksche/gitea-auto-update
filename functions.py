@@ -1,3 +1,11 @@
+'''
+Gitea Remote Updater
+
+Copyright 2018, 2019 The Gitea-Auto-Update Authors
+All rights reserved.
+
+License: GNU General Public License
+'''
 import settings
 import requests
 import os

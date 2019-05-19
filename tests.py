@@ -1,3 +1,11 @@
+'''
+Gitea Remote Updater
+
+Copyright 2019 The Gitea-Auto-Update Authors
+All rights reserved.
+
+License: GNU General Public License
+'''
 import functions
 import unittest
 

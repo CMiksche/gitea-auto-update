@@ -1,6 +1,6 @@
 # Gitea Remote Updater
 
-Script for a automatic update of gitea. Should be run locally on the gitea server.
+Script for a automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
 
 ## Procedure
 * Get Gitea Version via Gitea API
@@ -36,3 +36,9 @@ Uses python version 3
 
 * English: http://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html
 * German: https://blog.wronnay.net/automatische-gitea-updates/
+
+## Contributors
+
+ - [@Eideen](https://github.com/Eideen)
+
+Thank you for your support!
