@@ -30,6 +30,7 @@ def buildFromSource(tag):
 def getVersionList(string):
     return list(map(int, string.split('.')))
 
+
 # Function to check if there is a new version
 def checkVersion(new_version, old_version):
     new_version_list = getVersionList(new_version)
@@ -40,3 +41,12 @@ def checkVersion(new_version, old_version):
             return True
 
     return None
+
+# Function to check if tool is available
+def is_tool(name):
+    ##Check whether `name` is on PATH and marked as executable.
+
+    # from whichcraft import which
+    from shutil import which
+
+    return which(name) is not None
