@@ -49,7 +49,7 @@ if functions.checkVersion(github_version, current_version):
 
         ## downloading sha
         print ("downloading sha256 hashsum")
-        download(shadownload, settings.tmpdir+'gitea.xz.sha256')
+        functions.download(shadownload, settings.tmpdir+'gitea.xz.sha256')
         ## downloading xz
         print ("downloading", github_version_tag+'gitea.xz')
         tmpxz = settings.tmpdir+'gitea-'+github_version+'-'+settings.gtsystem+'.xz'
