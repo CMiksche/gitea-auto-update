@@ -11,15 +11,7 @@ import requests
 import os
 import functions
 
-def is_tool(name):
-    ##Check whether `name` is on PATH and marked as executable.
-
-    # from whichcraft import which
-    from shutil import which
-
-    return which(name) is not None
-
-if not is_tool("xz"):
+if not functions.is_tool("xz"):
 	print ("missing dependency: xz")
 	quit()
 
