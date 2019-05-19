@@ -62,7 +62,7 @@ if github_version > current_version:
 
     # Stop systemd service
     print ("new version available, stopping service")
-    #os.system("systemctl stop gitea.service")
+    os.system("systemctl stop gitea.service")
 
     # Should the new version be build from source?
     if settings.build_from_source:
