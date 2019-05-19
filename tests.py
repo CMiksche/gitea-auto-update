@@ -26,5 +26,8 @@ class Tests(unittest.TestCase):
     def testInt(self):
         self.assertTrue(functions.checkVersion('9', '8'))
 
+    def testSuffix(self):
+        self.assertTrue(functions.checkVersion('1.9.0+dev-264-g8de76b6e6', '1.8.0'))
+
 if __name__ == '__main__':
     unittest.main()
