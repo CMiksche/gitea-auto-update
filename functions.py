@@ -34,21 +34,12 @@ def buildFromSource(tag):
     # Move binary
     os.system("mv gitea "+settings.gtfile)
 
-# Function to create a list from a version string
-def getVersionList(string):
-    return list(map(int, string.split('.')))
-
-
 # Function to check if there is a new version
 def checkVersion(new_version, old_version):
-    new_version_list = getVersionList(new_version)
-    old_version_list = getVersionList(old_version)
 
-    for id, val in enumerate(new_version_list):
-        if val > old_version_list[id]:
-            return True
+    from packaging import version
 
-    return None
+    return version.parse(new_version) > version.parse(old_version)
 
 # Function to check if tool is available
 def is_tool(name):
