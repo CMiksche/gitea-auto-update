@@ -21,7 +21,7 @@ Uses python version 3
 1. Use the following command to install all dependencies.
 
   ```
-  sudo pip install requests
+  sudo pip install requests packaging
   ```
 
 2. Then clone the git repository.
