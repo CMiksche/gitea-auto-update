@@ -53,7 +53,7 @@ if functions.checkVersion(github_version, current_version):
         ## downloading xz
         print ("downloading", github_version_tag+'gitea.xz')
         tmpxz = settings.tmpdir+'gitea-'+github_version+'-'+settings.gtsystem+'.xz'
-        download(gtdownload, tmpxz)
+        functions.download(gtdownload, tmpxz)
 
         # doing sha256 sum
         os.chdir(settings.tmpdir)
