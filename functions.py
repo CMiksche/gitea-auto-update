@@ -30,7 +30,7 @@ def buildFromSource(tag):
 def getVersionList(string):
     return list(map(int, string.split('.')))
 
-string.split
+
 # Function to check if there is a new version
 def checkVersion(new_version, old_version):
     new_version_list = getVersionList(new_version)
