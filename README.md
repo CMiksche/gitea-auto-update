@@ -1,13 +1,21 @@
-# Gitea Remote Updater
+# Gitea Auto Updater
 
 Script for a automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
 
 ## Procedure
-* Get Gitea Version via Gitea API
+* Get Gitea Version from the Gitea CLI and if that fails from the Gitea API
 * Get latest Relase via GitHub API
 * Check if there is a newer Version
-* If true
-    * Download new version, overwrite old version
+* If there is a newer Version:
+    * If binary file was selected: 
+        * Download new version
+        * Check sha256
+        * Overwrite old version
+    * If build from source is active: 
+        * Checkout new release branch
+        * Build binary
+        * Overwrite old binary
+        
 
 ## General Information
 License: GNU General Public License

@@ -1,5 +1,5 @@
 '''
-Gitea Remote Updater
+Gitea Auto Updater
 
 Copyright 2019 The Gitea-Auto-Update Authors
 All rights reserved.
