@@ -4,7 +4,7 @@ Script for a automatic update of gitea. Should be run locally on the gitea serve
 
 ## Procedure
 * Get Gitea Version from the Gitea CLI and if that fails from the Gitea API
-* Get latest Relase via GitHub API
+* Get latest Release via GitHub API
 * Check if there is a newer Version
 * If there is a newer Version:
     * If binary file was selected: 
