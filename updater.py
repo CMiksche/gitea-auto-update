@@ -16,7 +16,7 @@ if not functions.is_tool("xz"):
 	quit()
 
 # Version from gitea site
-current_version = requests.get(settings.gtsite).json()['version']
+current_version = functions.getCurrentVersion()
 print ("current_version =", current_version)
 # Get version tag from github and remove first char (v)
 github_version_tag = requests.get(settings.gtgithubapiurl).json()['tag_name']

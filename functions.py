@@ -49,3 +49,23 @@ def is_tool(name):
     from shutil import which
 
     return which(name) is not None
+
+def parseFileVersion(string):
+    return string.split(" ")[2]
+
+def getVersionFromFile():
+    version_string = os.popen(settings.gtfile+" -v").read()
+    return parseFileVersion(version_string)
+
+# Function to get the current version
+def getCurrentVersion():
+    try:
+        # Try to get the version from the file
+        current_version = getVersionFromFile()
+    except:
+        # Get the version via the web api if the file does fail
+        current_version = requests.get(settings.gtsite).json()['version']
+        if current_version.status_code != 200:
+            current_version = getVersionFromFile()
+    finally:
+        return current_version

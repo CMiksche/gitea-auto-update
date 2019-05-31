@@ -29,5 +29,8 @@ class Tests(unittest.TestCase):
     def testSuffix(self):
         self.assertTrue(functions.checkVersion('1.9.0+dev-264-g8de76b6e6', '1.8.0'))
 
+    def testParseFileVersion(self):
+        self.assertEqual(functions.parseFileVersion('Gitea version 1.8.1 built with go1.12.2 : bindata, sqlite, sqlite_unlock_notify'), '1.8.1')
+
 if __name__ == '__main__':
     unittest.main()

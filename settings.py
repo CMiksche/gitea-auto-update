@@ -7,6 +7,7 @@ All rights reserved.
 License: GNU General Public License
 '''
 # Gitea Site
+# Optional - the script will get the version from the gitea file if you change the url to a empty string
 gtsite = 'https://your-gitea-instance.com/api/v1/version'
 # Gitea GitHub API URL for latest Relase
 gtgithubapiurl = 'https://api.github.com/repos/go-gitea/gitea/releases/latest'
