@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.7"
+cache: pip
+install:
+  - pip install requests packaging
+script:
+  - python tests.py
