@@ -50,3 +50,5 @@ Uses python version 3
  - [@Eideen](https://github.com/Eideen)
 
 Thank you for your support!
+
+Interested in contributing to this project? Check out the [Contribution Guidelines](CONTRIBUTING.md).
