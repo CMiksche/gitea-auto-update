@@ -1,5 +1,7 @@
 # Gitea Auto Updater
 
+[![Build Status](https://travis-ci.org/CMiksche/gitea-auto-update.svg?branch=master)](https://travis-ci.org/CMiksche/gitea-auto-update)
+
 Script for a automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
 
 ## Procedure
