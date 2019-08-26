@@ -8,10 +8,11 @@ License: GNU General Public License
 '''
 import os
 import logging
+import configparser
+import fire
 import lib.version
 import lib.download
 import lib.build
-
 
 class Update:
 
@@ -57,3 +58,24 @@ class Update:
             print("update successfully")
         else:
             print("current version is uptodate")
+
+def updater(settings='settings.ini'):
+    # Config
+    config = configparser.ConfigParser()
+    config.read(settings)
+    # Create a log file
+    logging.basicConfig(filename=config.get('Gitea', 'logFile'), level=logging.DEBUG)
+    # Start update
+    Update(config.get('Gitea', 'site'),
+                  config.get('Gitea', 'file'),
+                  config.get('Gitea', 'sourceDir'),
+                  config.get('Gitea', 'apiUrl'),
+                  config.get('Gitea', 'buildFromSource'),
+                  config.get('Gitea', 'tmpDir'),
+                  config.get('Gitea', 'system'))
+
+def main():
+    fire.Fire(updater)
+
+if __name__ == '__main__':
+  main()
