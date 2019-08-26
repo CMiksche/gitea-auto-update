@@ -10,9 +10,9 @@ import os
 import logging
 import configparser
 import fire
-import lib.version
-import lib.download
-import lib.build
+import gitea_auto_update.lib.version
+import gitea_auto_update.lib.download
+import gitea_auto_update.lib.build
 
 class Update:
 
@@ -30,8 +30,8 @@ class Update:
         self.checkAndUpdate()
 
     def initVersionAndBuild(self):
-        self.version = lib.version.Version(self.gtSite, self.gtFile)
-        self.build = lib.build.Build(self.gtFile, self.sourceDir)
+        self.version = gitea_auto_update.lib.version.Version(self.gtSite, self.gtFile)
+        self.build = gitea_auto_update.lib.build.Build(self.gtFile, self.sourceDir)
 
     def getVersionAndTag(self):
         self.currentVersion = self.version.getCurrentVersion()                  # Version from gitea site
@@ -42,7 +42,7 @@ class Update:
         if self.buildFromSource:                                                # Should the new version be build from source?
             self.build.fromSource(self.githubVersionTag)
         else:
-            self.download = self.download.Download(self.tmpDir,
+            self.download = gitea_auto_update.lib.download.Download(self.tmpDir,
                                               self.githubVersion,
                                               self.githubVersionTag,
                                               self.gtSystem,
