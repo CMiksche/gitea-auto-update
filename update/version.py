@@ -39,10 +39,10 @@ class Version:
             if currentVersion.status_code != 200:
                 currentVersion = self.getVersionFromFile()
         finally:
-            logging.info("current_version =", currentVersion)
+            logging.info('Version: current_version = %s', currentVersion)
             return currentVersion
 
     def getGithubVersionTag(self, apiUrl):
         versionTag = requests.get(apiUrl).json()['tag_name']
-        logging.info("github_version_tag =", versionTag)
+        logging.info('Version: github_version_tag = %s', versionTag)
         return versionTag

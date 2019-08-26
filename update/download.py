@@ -16,7 +16,7 @@ class Download:
 
     def __init__(self, tmpDir, githubVersion, githubVersionTag, gtSystem, gtFile):
         if not self.isTool("xz"):
-            logging.error("missing dependency: xz")
+            logging.error('Download: missing dependency: xz')
             quit()
 
         self.tmpDir = tmpDir
@@ -45,14 +45,14 @@ class Download:
     def downloadGiteaFiles(self):
         # Set download url
         gtDownload = 'https://github.com/go-gitea/gitea/releases/download/' + self.githubVersionTag + '/gitea-' + self.githubVersion + '-' + self.gtSystem + '.xz'
-        logging.info('Gitea file: %s', gtDownload)
+        logging.info('Download: Gitea file: %s', gtDownload)
         shaDownload = gtDownload + '.sha256'
-        logging.info('SHA file: %s', shaDownload)
+        logging.info('Download: SHA file: %s', shaDownload)
 
         # Download file
-        logging.info("downloading sha256 hashsum")
+        logging.info('Download: downloading sha256 hashsum')
         self.download(shaDownload, self.tmpDir + 'gitea.xz.sha256')
-        logging.info("downloading %s", self.githubVersionTag + 'gitea.xz')
+        logging.info('Download: downloading %s', self.githubVersionTag + 'gitea.xz')
         self.tmpXz = self.tmpDir +'gitea-' + self.githubVersion + '-' + self.gtSystem + '.xz'
         self.download(gtDownload, self.tmpXz)
 
@@ -60,14 +60,12 @@ class Download:
         return os.system("sha256sum -c gitea.xz.sha256 > /dev/null") == 0
 
     def extractFile(self):
-        logging.info("sha ok, extracting file to location")
+        logging.info('Download: sha ok, extracting file to location')
         # extracting download file
         cmd = "xz -d " + self.tmpXz
-        logging.info(cmd)
         os.system(cmd)
         #  moving temp file to gtfile location
         cmd = 'mv ' + self.tmpDir + 'gitea-' + self.githubVersion + '-' + self.gtSystem + ' ' + self.gtFile
-        logging.info(cmd)
         os.system(cmd)
 
     def checkAndExtract(self):
@@ -75,5 +73,5 @@ class Download:
         if self.shaCheck():
             self.extractFile()
         else:
-            logging.error("error: sha256sum failed")
+            logging.error('Download: error: sha256sum failed')
             quit()

@@ -46,10 +46,10 @@ class Update:
 
     def checkAndUpdate(self):
         if version.checkVersion(self.githubVersion, self.currentVersion):        # Check if there is a new version
-            logging.info("new version available, stopping service")
+            logging.info('Update: new version available, stopping service')
             os.system("systemctl stop gitea.service")
             self.doUpdate()
-            logging.info("starting gitea.service")
+            logging.info('Update: starting gitea.service')
             os.system("systemctl start gitea.service")
             print("update successfully")
         else:
