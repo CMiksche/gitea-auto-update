@@ -26,6 +26,7 @@ class Update:
 
         self.initVersionAndBuild()
         self.getVersionAndTag()
+        self.checkAndUpdate()
 
     def initVersionAndBuild(self):
         self.version = lib.version.Version(self.gtSite, self.gtFile)
