@@ -9,7 +9,7 @@ License: GNU General Public License
 import logging
 import configparser
 import fire
-from update import update
+import update
 
 def updater(settings='settings.ini'):
     # Config
@@ -19,12 +19,12 @@ def updater(settings='settings.ini'):
     logging.basicConfig(filename=config.get('Gitea', 'logFile'), level=logging.DEBUG)
     # Start update
     update.Update(config.get('Gitea', 'site'),
-                      config.get('Gitea', 'file'),
-                      config.get('Gitea', 'sourceDir'),
-                      config.get('Gitea', 'apiUrl'),
-                      config.get('Gitea', 'buildFromSource'),
-                      config.get('Gitea', 'tmpDir'),
-                      config.get('Gitea', 'system'))
+                  config.get('Gitea', 'file'),
+                  config.get('Gitea', 'sourceDir'),
+                  config.get('Gitea', 'apiUrl'),
+                  config.get('Gitea', 'buildFromSource'),
+                  config.get('Gitea', 'tmpDir'),
+                  config.get('Gitea', 'system'))
 
 def main():
     fire.Fire(updater)

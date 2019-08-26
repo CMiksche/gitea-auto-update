@@ -8,7 +8,9 @@ License: GNU General Public License
 '''
 import os
 import logging
-from update import version, download, build
+import lib.version
+import lib.download
+import lib.build
 
 
 class Update:
@@ -26,8 +28,8 @@ class Update:
         self.getVersionAndTag()
 
     def initVersionAndBuild(self):
-        self.version = version.Version(self.gtSite, self.gtFile)
-        self.build = build.Build(self.gtFile, self.sourceDir)
+        self.version = lib.version.Version(self.gtSite, self.gtFile)
+        self.build = lib.build.Build(self.gtFile, self.sourceDir)
 
     def getVersionAndTag(self):
         self.currentVersion = self.version.getCurrentVersion()                  # Version from gitea site
@@ -36,16 +38,16 @@ class Update:
 
     def doUpdate(self):
         if self.buildFromSource:                                                # Should the new version be build from source?
-            build.fromSource(self.githubVersionTag)
+            self.build.fromSource(self.githubVersionTag)
         else:
-            self.download = download.Download(self.tmpDir,
+            self.download = self.download.Download(self.tmpDir,
                                               self.githubVersion,
                                               self.githubVersionTag,
                                               self.gtSystem,
                                               self.gtFile)
 
     def checkAndUpdate(self):
-        if version.checkVersion(self.githubVersion, self.currentVersion):        # Check if there is a new version
+        if self.version.checkVersion(self.githubVersion, self.currentVersion):        # Check if there is a new version
             logging.info('Update: new version available, stopping service')
             os.system("systemctl stop gitea.service")
             self.doUpdate()
