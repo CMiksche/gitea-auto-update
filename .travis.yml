@@ -4,6 +4,7 @@ python:
   - "3.7"
 cache: pip
 install:
-  - pip install requests packaging
+  - pip install pipenv
+  - pipenv install
 script:
   - python tests.py

@@ -1,4 +1,4 @@
-# Gitea Auto Updater
+# Gitea Auto Update
 
 [![Build Status](https://travis-ci.org/CMiksche/gitea-auto-update.svg?branch=master)](https://travis-ci.org/CMiksche/gitea-auto-update)
 
@@ -28,19 +28,29 @@ Uses python version 3
 
 ## Installation
 
-1. Use the following command to install all dependencies.
+Create a settings.ini file on your system. Example:
+
+  ````
+[Gitea]
+site=https://your-gitea-instance.com/api/v1/version
+apiUrl=https://api.github.com/repos/go-gitea/gitea/releases/latest
+system=linux-amd64
+file=/usr/local/bin/gitea
+tmpDir=/tmp/
+buildFromSource=None
+sourceDir=/home/git/go/src/code.gitea.io/gitea
+logFile=update.log
+  ````
+
+Use the following command to install all gitea-auto-update.
 
   ```
-  sudo pip install requests packaging
+  sudo pip install gitea-auto-update
   ```
 
-2. Then clone the git repository.
+Enter the command `gite-auto-update --settings=/path/to/settings.ini` in your commandline.
 
-3. After that, please change the variables in the settings.py file.
-
-4. Enter the command `python updater.py` in your commandline.
-
-5. If you want to schedule your updates, edit your /etc/crontab file.
+If you want to schedule your updates, edit your /etc/crontab file.
 
 ## Tutorials
 
