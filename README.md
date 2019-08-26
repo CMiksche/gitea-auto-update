@@ -42,7 +42,7 @@ sourceDir=/home/git/go/src/code.gitea.io/gitea
 logFile=update.log
   ````
 
-Use the following command to install all gitea-auto-update.
+Use the following command to install gitea-auto-update.
 
   ```
   sudo pip install gitea-auto-update
