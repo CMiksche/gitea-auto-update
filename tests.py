@@ -6,10 +6,10 @@ All rights reserved.
 
 License: GNU General Public License
 '''
-import update.version
+import gitea_auto_update.lib.version
 import unittest
 
-version = update.version.Version('', '')
+version = gitea_auto_update.lib.version.Version('', '')
 
 class Tests(unittest.TestCase):
 
