@@ -67,6 +67,8 @@ class Download:
         #  moving temp file to gtfile location
         cmd = 'mv ' + self.tmpDir + 'gitea-' + self.githubVersion + '-' + self.gtSystem + ' ' + self.gtFile
         os.system(cmd)
+        cmd = 'chmod +x ' + self.gtFile
+        os.system(cmd)
 
     def checkAndExtract(self):
         os.chdir(self.tmpDir)
