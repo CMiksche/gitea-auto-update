@@ -28,7 +28,7 @@ class Download:
         self.downloadGiteaFiles()
         self.checkAndExtract()
 
-    def isTool(name):
+    def isTool(self, name):
         # Function to check if tool is available
         ##Check whether `name` is on PATH and marked as executable.
         return which(name) is not None
