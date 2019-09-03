@@ -35,9 +35,13 @@ class Version:
             currentVersion = self.getVersionFromFile()
         except:
             # Get the version via the web api if the file does fail
-            currentVersion = requests.get(self.gtSite).json()['version']
-            if currentVersion.status_code != 200:
-                currentVersion = self.getVersionFromFile()
+            try:
+                currentVersion = requests.get(self.gtSite).json()['version']
+                if currentVersion.status_code != 200:
+                    raise RuntimeError("Could not download version.")
+            except:
+                # To allow installation, return a default version of "0.0.0".
+                currentVersion = "0.0.0"
         finally:
             logging.info('Version: current_version = %s', currentVersion)
             return currentVersion
