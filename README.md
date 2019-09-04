@@ -61,6 +61,7 @@ If you want to schedule your updates, edit your /etc/crontab file.
 ## Contributors
 
  - [@Eideen](https://github.com/Eideen)
+ - [@iwalton3](https://github.com/iwalton3)
 
 Thank you for your support!
 

@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name='gitea_auto_update',
-      version='2.0.6',
+      version='2.0.7',
       description='A script which can update gitea to a new version.',
       long_description=long_description,
       long_description_content_type="text/markdown",
