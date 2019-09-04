@@ -38,15 +38,15 @@ apiUrl=https://api.github.com/repos/go-gitea/gitea/releases/latest
 system=linux-amd64
 file=/usr/local/bin/gitea
 tmpDir=/tmp/
-buildFromSource=None
-sourceDir=/home/git/go/src/code.gitea.io/gitea
+buildFromSource=
+sourceDir=
 logFile=update.log
   ````
 
 Use the following command to install gitea-auto-update.
 
   ```
-  sudo pip install gitea-auto-update
+  sudo pip3 install gitea-auto-update
   ```
 
 Enter the command `gite-auto-update --settings=/path/to/settings.ini` in your commandline.

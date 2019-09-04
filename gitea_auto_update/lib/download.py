@@ -28,7 +28,7 @@ class Download:
         self.downloadGiteaFiles()
         self.checkAndExtract()
 
-    def isTool(name):
+    def isTool(self, name):
         # Function to check if tool is available
         ##Check whether `name` is on PATH and marked as executable.
         return which(name) is not None
@@ -66,6 +66,8 @@ class Download:
         os.system(cmd)
         #  moving temp file to gtfile location
         cmd = 'mv ' + self.tmpDir + 'gitea-' + self.githubVersion + '-' + self.gtSystem + ' ' + self.gtFile
+        os.system(cmd)
+        cmd = 'chmod +x ' + self.gtFile
         os.system(cmd)
 
     def checkAndExtract(self):
