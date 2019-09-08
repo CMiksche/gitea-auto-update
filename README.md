@@ -58,6 +58,14 @@ If you want to schedule your updates, edit your /etc/crontab file.
 * English: http://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html
 * German: https://blog.wronnay.net/automatische-gitea-updates/
 
+## Development
+
+The following instructions help you for developing.
+
+* Clone this git repo
+* Install pipenv: `pip install pipenv`
+* Install all dependencies: `pipenv install`
+
 ## Contributors
 
  - [@Eideen](https://github.com/Eideen)
