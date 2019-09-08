@@ -7,4 +7,5 @@ install:
   - pip install pipenv
   - pipenv install
 script:
+  - gitlint
   - python tests.py
