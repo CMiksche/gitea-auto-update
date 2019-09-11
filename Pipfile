@@ -10,6 +10,7 @@ requests = "*"
 packaging = "*"
 fire = "*"
 configparser = "*"
+gitlint = "*"
 
 [requires]
 python_version = "3.7"

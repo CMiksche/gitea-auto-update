@@ -62,9 +62,13 @@ If you want to schedule your updates, edit your /etc/crontab file.
 
 The following instructions help you for developing.
 
+* Check out the [Contribution Guidelines](CONTRIBUTING.md).
 * Clone this git repo
 * Install pipenv: `pip install pipenv`
 * Install all dependencies: `pipenv install`
+* You can run the tests with `python tests.py`
+* After changes and commit, you can check if your commit message follows the contribution guidelines with `gitlint`. If there is a problem, gitlint will show you a error message.
+* After pushing, you should check the build status which currently checks the tests and the commit message format.
 
 ## Contributors
 
