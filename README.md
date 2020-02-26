@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/CMiksche/gitea-auto-update.svg?branch=master)](https://travis-ci.org/CMiksche/gitea-auto-update)
 [![PyPI version](https://badge.fury.io/py/gitea-auto-update.svg)](https://badge.fury.io/py/gitea-auto-update)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/gitea-auto-update)
 
 Script for a automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
 
