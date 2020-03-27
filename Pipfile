@@ -11,6 +11,7 @@ packaging = "*"
 fire = "*"
 configparser = "*"
 gitlint = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,52 +1,60 @@
 '''
 Gitea Auto Updater
 
-Copyright 2018, 2019 The Gitea-Auto-Update Authors
+Copyright 2018, 2019, 2020 The Gitea-Auto-Update Authors
 All rights reserved.
 
 License: GNU General Public License
 '''
-from packaging import version
 import os
-import requests
 import logging
+from packaging import version
+import requests
+
+
+def get_github_version_tag(api_url):
+    """Get the version from github"""
+    version_tag = requests.get(api_url).json()['tag_name']
+    logging.info('Version: github_version_tag = %s', version_tag)
+    return version_tag
+
+
+def parse_file_version(string):
+    """Get the version from a file"""
+    return string.split(" ")[2]
+
+
+def check_version(new_version, old_version):
+    """Function to check if there is a new version"""
+    return version.parse(new_version) > version.parse(old_version)
+
 
 class Version:
+    """Class to get and check the gitea version"""
 
-    def __init__(self, gtSite, gtFile):
-        self.gtSite = gtSite
-        self.gtFile = gtFile
+    def __init__(self, gt_site, gt_file):
+        self.gt_site = gt_site
+        self.gt_file = gt_file
 
-    def checkVersion(self, newVersion, oldVersion):
-        # Function to check if there is a new version
-        return version.parse(newVersion) > version.parse(oldVersion)
+    def get_version_from_file(self):
+        """Read the version from the gitea file"""
+        version_string = os.popen(self.gt_file + " -v").read()
+        return parse_file_version(version_string)
 
-    def parseFileVersion(self, string):
-        return string.split(" ")[2]
-
-    def getVersionFromFile(self):
-        versionString = os.popen(self.gtFile + " -v").read()
-        return self.parseFileVersion(versionString)
-
-    def getCurrentVersion(self):
-        # Function to get the current version
+    def get_current_version(self):
+        """Function to get the current version"""
         try:
             # Try to get the version from the file
-            currentVersion = self.getVersionFromFile()
-        except:
+            current_version = self.get_version_from_file()
+        except IOError:
             # Get the version via the web api if the file does fail
             try:
-                currentVersion = requests.get(self.gtSite).json()['version']
-                if currentVersion.status_code != 200:
+                current_version = requests.get(self.gt_site).json()['version']
+                if current_version.status_code != 200:
                     raise RuntimeError("Could not download version.")
-            except:
+            except RuntimeError:
                 # To allow installation, return a default version of "0.0.0".
-                currentVersion = "0.0.0"
+                current_version = "0.0.0"
         finally:
-            logging.info('Version: current_version = %s', currentVersion)
-            return currentVersion
-
-    def getGithubVersionTag(self, apiUrl):
-        versionTag = requests.get(apiUrl).json()['tag_name']
-        logging.info('Version: github_version_tag = %s', versionTag)
-        return versionTag
+            logging.info('Version: current_version = %s', current_version)
+        return current_version

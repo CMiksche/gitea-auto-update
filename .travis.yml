@@ -8,4 +8,5 @@ install:
   - pipenv install
 script:
   - gitlint
-  - python tests.py
+  - pylint setup.py gitea_auto_update
+  - python -m unittest
