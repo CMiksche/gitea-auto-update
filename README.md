@@ -11,15 +11,15 @@ Script for a automatic update of gitea. Should be run locally on the gitea serve
 * Get latest Release via GitHub API
 * Check if there is a newer Version
 * If there is a newer Version:
-    * If binary file was selected: 
+    * If binary file was selected:
         * Download new version
         * Check sha256
         * Overwrite old version
-    * If build from source is active: 
+    * If build from source is active:
         * Checkout new release branch
         * Build binary
         * Overwrite old binary
-        
+
 
 ## General Information
 License: GNU General Public License
@@ -67,10 +67,16 @@ The following instructions help you for developing.
 * Clone this git repo
 * Install pipenv: `pip install pipenv`
 * Install all dependencies: `pipenv install`
+* Install git pre-commit hooks (for pylint and gitlint) with `pre-commit install`
 * You can run the tests with `python -m unittest`
+* After pushing, you should check the build status which currently checks the tests, pylint and the commit message format.
+
+### Notes
+
+The following steps are automatically executed via pre-commit hooks.
+
 * You can run pylint with `pylint gitea_auto_update`
 * After changes and commit, you can check if your commit message follows the contribution guidelines with `gitlint`. If there is a problem, gitlint will show you a error message.
-* After pushing, you should check the build status which currently checks the tests, pylint and the commit message format.
 
 ## Contributors
 
