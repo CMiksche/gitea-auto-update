@@ -51,7 +51,7 @@ class Version:
             try:
                 current_version = requests.get(self.gt_site).json()['version']
                 if current_version.status_code != 200:
-                    raise RuntimeError("Could not download version.")
+                    raise RuntimeError("Could not download version.") from None
             except RuntimeError:
                 # To allow installation, return a default version of "0.0.0".
                 current_version = "0.0.0"

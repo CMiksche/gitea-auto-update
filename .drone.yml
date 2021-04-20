@@ -1,0 +1,11 @@
+kind: pipeline
+name: default
+steps:
+  - name: test
+    image: python
+    commands:
+      - pip install pipenv
+      - pipenv install
+      - pipenv run gitlint
+      - pipenv run pylint setup.py gitea_auto_update
+      - pipenv run python -m unittest

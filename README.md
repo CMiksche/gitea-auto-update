@@ -1,6 +1,6 @@
 # Gitea Auto Update
 
-[![Build Status](https://travis-ci.org/CMiksche/gitea-auto-update.svg?branch=master)](https://travis-ci.org/CMiksche/gitea-auto-update)
+[![Build Status](https://cloud.drone.io/api/badges/CMiksche/gitea-auto-update/status.svg)](https://cloud.drone.io/CMiksche/gitea-auto-update)
 [![PyPI version](https://badge.fury.io/py/gitea-auto-update.svg)](https://badge.fury.io/py/gitea-auto-update)
 [![Downloads](https://pepy.tech/badge/gitea-auto-update)](https://pepy.tech/project/gitea-auto-update)
 

@@ -10,6 +10,7 @@ repos:
     rev: pylint-2.5.0
     hooks:
     -   id: pylint
+        additional_dependencies: ['packaging', 'requests']
 -   repo: https://github.com/jorisroovers/gitlint
     rev: v0.13.1
     hooks:
