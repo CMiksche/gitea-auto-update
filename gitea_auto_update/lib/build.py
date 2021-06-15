@@ -17,3 +17,4 @@ def build_from_source(tag, gt_file, source_dir):
     os.system("git checkout " + tag)
     os.system('TAGS="bindata sqlite sqlite_unlock_notify" make generate build')
     os.system("cp gitea " + gt_file)
+    os.system("rm -f gitea")
