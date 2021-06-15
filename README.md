@@ -80,8 +80,7 @@ The following steps are automatically executed via pre-commit hooks.
 
 ## Contributors
 
- - [@Eideen](https://github.com/Eideen)
- - [@iwalton3](https://github.com/iwalton3)
+See https://github.com/CMiksche/gitea-auto-update/graphs/contributors
 
 Thank you for your support!
 

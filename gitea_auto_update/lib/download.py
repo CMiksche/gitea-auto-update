@@ -74,7 +74,8 @@ class Download:
         # extracting download file
         cmd = "xz -d " + self.tmp_xz
         os.system(cmd)
-        #  copying temp file to gtfile location. Copying preserves SELinux permissions
+        #  copying temp file to gtfile location.
+        #  Copying preserves SELinux permissions, see issue #22
         cmd = 'cp ' + self.tmp_dir + 'gitea-' + self.github_version \
               + '-' + self.gt_system + ' ' + self.gt_file
         os.system(cmd)
