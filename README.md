@@ -50,7 +50,7 @@ Use the following command to install gitea-auto-update.
   sudo pip3 install gitea-auto-update
   ```
 
-Enter the command `gite-auto-update --settings=/path/to/settings.ini` in your commandline.
+Enter the command `gitea-auto-update --settings=/path/to/settings.ini` in your commandline.
 
 If you want to schedule your updates, edit your /etc/crontab file.
 
