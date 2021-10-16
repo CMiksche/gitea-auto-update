@@ -1,0 +1,31 @@
+on:
+  release:
+    types:
+      - created
+name: Publish Package
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: "Installs and upgrades pip, installs other dependencies and installs the package from setup.py"
+        run: |
+          # Upgrade pip
+          python3 -m pip install --upgrade pip
+          # Install build deps
+          python3 -m pip install pipenv setuptools wheel twine
+          pipenv install
+          # Install the package from setup.py
+          python3 setup.py install
+      - name: Build
+        run: |
+          python3 setup.py sdist bdist_wheel
+      - name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
