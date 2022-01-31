@@ -1,7 +1,7 @@
 '''
 Gitea Auto Updater
 
-Copyright 2018, 2019, 2020 The Gitea-Auto-Update Authors
+Copyright 2018, 2019, 2020, 2021, 2022 The Gitea-Auto-Update Authors
 All rights reserved.
 
 License: GNU General Public License
@@ -13,7 +13,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='gitea_auto_update',
-    version='2.0.9',
+    version='2.0.10',
     description='A script which can update gitea to a new version.',
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
