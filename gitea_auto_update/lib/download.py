@@ -31,7 +31,11 @@ def download(url, file_name):
 
 def sha_check():
     """Check sha for gitea file"""
-    return os.system("sha256sum -c gitea.xz.sha256 > /dev/null") == 0
+    sha_path = 'gitea.xz.sha256'
+    if os.path.exists(sha_path):
+        return os.system("sha256sum -c "+sha_path+" > /dev/null") == 0
+    # return true because we don't have a sha file to check
+    return True
 
 
 class Download:

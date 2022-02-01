@@ -8,12 +8,12 @@ License: GNU General Public License
 '''
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding='utf8') as fh:
     LONG_DESCRIPTION = fh.read()
 
 setuptools.setup(
     name='gitea_auto_update',
-    version='2.0.10',
+    version='2.0.11',
     description='A script which can update gitea to a new version.',
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
