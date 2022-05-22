@@ -28,6 +28,23 @@ Author: Christoph Daniel Miksche (m5e.de)
 
 Uses python version 3
 
+
+## Dependencies
+Install required dependencies.
+
+pip3
+  ```
+  sudo apt install python3-pip
+  ```
+setuptools
+  ```
+  sudo pip3 install setuptools
+  ```
+wheel
+  ```
+  sudo pip3 install wheel
+  ```
+
 ## Installation
 
 Create a settings.ini file on your system. Example:
