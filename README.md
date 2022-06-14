@@ -28,6 +28,10 @@ Author: Christoph Daniel Miksche (m5e.de)
 
 Uses python version 3
 
+
+## Dependencies
+Ensure `pip3`, `setuptools`, and `wheel` dependencies are installed on the system you are running this script in.
+
 ## Installation
 
 Create a settings.ini file on your system. Example:
