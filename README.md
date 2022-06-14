@@ -30,20 +30,7 @@ Uses python version 3
 
 
 ## Dependencies
-Install required dependencies.
-
-pip3
-  ```
-  sudo apt install python3-pip
-  ```
-setuptools
-  ```
-  sudo pip3 install setuptools
-  ```
-wheel
-  ```
-  sudo pip3 install wheel
-  ```
+Ensure `pip3`, `setuptools', and `wheel` dependencies are installed on the system you are running this script in.
 
 ## Installation
 
