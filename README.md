@@ -30,7 +30,7 @@ Uses python version 3
 
 
 ## Dependencies
-Ensure `pip3`, `setuptools`, and `wheel` dependencies are installed on the system you are running this script in.
+Ensure `pip3`, `setuptools`, `xz-utils` and `wheel` dependencies are installed on the system you are running this script in. (Most Linux OS like Ubuntu or Debian come with these pre-installed)
 
 ## Installation
 
