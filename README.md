@@ -4,9 +4,10 @@
 [![PyPI version](https://badge.fury.io/py/gitea-auto-update.svg)](https://badge.fury.io/py/gitea-auto-update)
 [![Downloads](https://pepy.tech/badge/gitea-auto-update)](https://pepy.tech/project/gitea-auto-update)
 ![GitHub](https://img.shields.io/github/license/cmiksche/gitea-auto-update?style=flat)
-![Twitter Follow](https://img.shields.io/twitter/follow/cmiksche?style=social)
+[![Twitter Follow](https://img.shields.io/twitter/follow/cmiksche?style=social)](https://twitter.com/cmiksche)
+[![Mastodon Follow](https://img.shields.io/mastodon/follow/106336578279256330?domain=https%3A%2F%2Fmastodon.social&style=social)](https://mastodon.social/@cmiksche)
 
-Script for a automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
+Script for an automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
 
 ## Procedure
 * Get Gitea Version from the Gitea CLI and if that fails from the Gitea API

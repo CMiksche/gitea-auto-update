@@ -24,7 +24,7 @@ def download(url, file_name):
     # open in binary mode
     with open(file_name, "wb") as file:
         # get request
-        response = requests.get(url)
+        response = requests.get(url, timeout=3600)
         # write to file
         file.write(response.content)
 

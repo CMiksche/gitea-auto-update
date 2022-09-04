@@ -14,7 +14,7 @@ import requests
 
 def get_github_version_tag(api_url):
     """Get the version from github"""
-    version_tag = requests.get(api_url).json()['tag_name']
+    version_tag = requests.get(api_url, timeout=30).json()['tag_name']
     logging.info('Version: github_version_tag = %s', version_tag)
     return version_tag
 
@@ -49,7 +49,7 @@ class Version:
         except IOError:
             # Get the version via the web api if the file does fail
             try:
-                current_version = requests.get(self.gt_site).json()['version']
+                current_version = requests.get(self.gt_site, timeout=30).json()['version']
                 if current_version.status_code != 200:
                     raise RuntimeError("Could not download version.") from None
             except RuntimeError:
