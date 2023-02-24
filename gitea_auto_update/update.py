@@ -70,6 +70,9 @@ class Update:
             print("update successfully")
         else:
             print("current version is uptodate")
+        print("Check out https://chapati.systems/autoupdate/ if you want to "
+              "update Gitea and other software "
+              "(like Drone, Caddy, Podman, Python, Zitadel and Kanboard)")
 
 
 def updater(settings='settings.ini'):

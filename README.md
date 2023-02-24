@@ -9,6 +9,12 @@
 
 Script for an automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
 
+## Want to update more?
+
+> If you want to update Gitea and other software (like Drone, Caddy, Podman, Python, Zitadel and Kanboard), you should check out [Autoupdate](https://chapati.systems/autoupdate/).
+>
+> This new tool of mine was built as a single binary with a config file and tested on multiple Linux systems.
+
 ## Procedure
 * Get Gitea Version from the Gitea CLI and if that fails from the Gitea API
 * Get latest Release via GitHub API

@@ -13,7 +13,7 @@ with open("README.md", "r", encoding='utf8') as fh:
 
 setuptools.setup(
     name='gitea_auto_update',
-    version='2.0.11',
+    version='2.0.12',
     description='A script which can update gitea to a new version.',
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
