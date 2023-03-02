@@ -1,6 +1,7 @@
 # Gitea Auto Update
 
-[![Build Status](https://cloud.drone.io/api/badges/CMiksche/gitea-auto-update/status.svg)](https://cloud.drone.io/CMiksche/gitea-auto-update)
+[![Build Status](https://github.com/CMiksche/gitea-auto-update/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/CMiksche/gitea-auto-update/actions/workflows/test.yml)
+[![Publish Package](https://github.com/CMiksche/gitea-auto-update/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/CMiksche/gitea-auto-update/actions/workflows/pypi-publish.yml)
 [![PyPI version](https://badge.fury.io/py/gitea-auto-update.svg)](https://badge.fury.io/py/gitea-auto-update)
 [![Downloads](https://pepy.tech/badge/gitea-auto-update)](https://pepy.tech/project/gitea-auto-update)
 ![GitHub](https://img.shields.io/github/license/cmiksche/gitea-auto-update?style=flat)
@@ -8,6 +9,8 @@
 [![Mastodon Follow](https://img.shields.io/mastodon/follow/106336578279256330?domain=https%3A%2F%2Fmastodon.social&style=social)](https://mastodon.social/@cmiksche)
 
 Script for an automatic update of gitea. Should be run locally on the gitea server. Has options for updating via new binary file or build from source.
+
+This project is on life-support. I focus on bringing new features to my paid [Autoupdate](https://chapati.systems/autoupdate/) tool.
 
 ## Want to update more?
 
