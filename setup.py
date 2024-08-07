@@ -13,13 +13,13 @@ with open("README.md", "r", encoding='utf8') as fh:
 
 setuptools.setup(
     name='gitea_auto_update',
-    version='2.0.12',
+    version='2.0.13',
     description='A script which can update gitea to a new version.',
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url='https://github.com/CMiksche/gitea-auto-update',
     author='Christoph Miksche',
-    author_email='christoph@miksche.org',
+    author_email='autoupdate@chapati.systems',
     license='GPLv3',
     classifiers=[
         "Programming Language :: Python :: 3",
